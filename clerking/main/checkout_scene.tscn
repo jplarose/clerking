@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bd7wjorhh8pv0"]
-
-[ext_resource type="PackedScene" uid="uid://r717h7giw62h" path="res://models/counter_edge.blend" id="1_fl2ei"]
-
-[node name="Checkout_Scene" type="Node3D" unique_id=477009143]
-
-[node name="counter_edge" parent="." unique_id=1742850286 instance=ExtResource("1_fl2ei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.238575, 0, -10.394318)

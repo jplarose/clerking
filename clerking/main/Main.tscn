@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bd7wjorhh8pv0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jonnb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fl2ei"]
+sky_material = SubResource("ProceduralSkyMaterial_jonnb")
+
+[sub_resource type="Environment" id="Environment_eew1y"]
+background_mode = 2
+sky = SubResource("Sky_fl2ei")
+tonemap_mode = 2
+
+[node name="Main" type="Node3D" unique_id=477009143]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1805048248]
+environment = SubResource("Environment_eew1y")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=658931454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46884823, 0.30001163, -0.095214844)
+use_collision = true
+size = Vector3(48, 1, 48)
+
+[node name="Wall1" type="CSGBox3D" parent="." unique_id=673633083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.00808, 7.823818, -0.010056876)
+use_collision = true
+size = Vector3(1, 16, 48)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1840730630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6500006, 8.1, -24.7)
+use_collision = true
+size = Vector3(48, 16, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1300032573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.550001, 7.7, -0.09999901)
+use_collision = true
+size = Vector3(1, 16, 48)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1055199476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80000114, 7.75, 24.4)
+use_collision = true
+size = Vector3(48, 16, 1)
+
+[node name="Counter" type="CSGBox3D" parent="." unique_id=1206944612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.8000001, 0.90000004)
+use_collision = true
+size = Vector3(4.4, 2, 2.2)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1248547537]
+transform = Transform3D(0.649519, -0.75802225, 0.059391186, 0.21984631, 0.26200268, 0.9396925, -0.7278685, -0.5972913, 0.33682412, 0.8, 17.3, -4.5000005)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1431571910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 2.8, 6.1000004)
+fov = 80.0
