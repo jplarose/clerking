@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bd7wjorhh8pv0"]
 
+[ext_resource type="PackedScene" uid="uid://drnx86bljqt2q" path="res://models/Demo2.glb" id="1_qv31u"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jonnb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,3 +55,6 @@ transform = Transform3D(0.649519, -0.75802225, 0.059391186, 0.21984631, 0.262002
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1431571910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 2.8, 6.1000004)
 fov = 80.0
+
+[node name="Demo2" parent="." unique_id=1938479592 instance=ExtResource("1_qv31u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.343946, 0.95256853, 5.272128)
