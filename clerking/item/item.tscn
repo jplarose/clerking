@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b2ajrom8640ge"]
+
+[ext_resource type="Script" uid="uid://c3moy4u3kmqup" path="res://item/GrabbableItem.cs" id="1_4ojsc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qe1ho"]
+albedo_color = Color(1, 1, 0.047058824, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qe1ho"]
+material = SubResource("StandardMaterial3D_qe1ho")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qe1ho"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="Item" type="Node3D" unique_id=691659542]
+script = ExtResource("1_4ojsc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1864163023]
+mesh = SubResource("BoxMesh_qe1ho")
+
+[node name="PickupArea" type="Area3D" parent="." unique_id=1640874811]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea" unique_id=1292652717]
+shape = SubResource("BoxShape3D_qe1ho")

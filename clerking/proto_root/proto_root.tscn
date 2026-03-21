@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://qv0ynpqcg3d4"]
+[gd_scene format=3 uid="uid://bu8cvf485k6gh"]
 
-[ext_resource type="Script" uid="uid://cmhmk5p5yrn72" path="res://HandController.cs" id="1_5edtl"]
+[ext_resource type="Script" uid="uid://cmhmk5p5yrn72" path="res://proto_root/HandController.cs" id="1_lhmja"]
+[ext_resource type="PackedScene" uid="uid://b2ajrom8640ge" path="res://item/item.tscn" id="2_7gwpl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jeks1"]
 size = Vector3(10, 1, 10)
@@ -60,7 +61,7 @@ height = 0.25
 [node name="ProtoRoot" type="Node3D" unique_id=1243935885]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314195921]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 2.5, 2.25)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=190657831]
 
@@ -116,9 +117,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.8, 0)
 [node name="RightHandAnchor" type="Marker3D" parent="PlayerRig" unique_id=1021654127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.8, 0)
 
-[node name="LeftHand" type="Node3D" parent="PlayerRig" unique_id=1200089093]
+[node name="LeftHand" type="Node3D" parent="PlayerRig" unique_id=1200089093 node_paths=PackedStringArray("Anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.8, 0)
-script = ExtResource("1_5edtl")
+script = ExtResource("1_lhmja")
+Anchor = NodePath("../LeftHandAnchor")
+MoveSpeed = 4.0
+MoveLeftAction = "left_hand_left"
+MoveRightAction = "left_hand_right"
+MoveForwardAction = "left_hand_forward"
+MoveBackAction = "left_hand_back"
+GrabAction = "left_hand_grab"
 
 [node name="HoldPoint" type="Marker3D" parent="PlayerRig/LeftHand" unique_id=632221089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
@@ -131,8 +139,16 @@ shape = SubResource("SphereShape3D_jeks1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerRig/LeftHand" unique_id=1532237081]
 mesh = SubResource("SphereMesh_urt3w")
 
-[node name="RightHand" type="Node3D" parent="PlayerRig" unique_id=2053056929]
+[node name="RightHand" type="Node3D" parent="PlayerRig" unique_id=2053056929 node_paths=PackedStringArray("Anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.8, 0)
+script = ExtResource("1_lhmja")
+Anchor = NodePath("../RightHandAnchor")
+MoveSpeed = 4.0
+MoveLeftAction = "right_hand_left"
+MoveRightAction = "right_hand_right"
+MoveForwardAction = "right_hand_forward"
+MoveBackAction = "right_hand_back"
+GrabAction = "right_hand_grab"
 
 [node name="HoldPoint" type="Marker3D" parent="PlayerRig/RightHand" unique_id=1039464373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
@@ -147,3 +163,12 @@ mesh = SubResource("SphereMesh_21mii")
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=1574650968]
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="Item" parent="." unique_id=691659542 instance=ExtResource("2_7gwpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.75, -0.5)
+
+[node name="Item3" parent="." unique_id=1648851732 instance=ExtResource("2_7gwpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.75, 0.5)
+
+[node name="Item2" parent="." unique_id=358590561 instance=ExtResource("2_7gwpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.75, 0)
